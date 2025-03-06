@@ -11,11 +11,25 @@
             class="p-2 border rounded-md w-full mb-4"
         />
 
-        <ul class="bg-white p-4 shadow-md rounded-lg">
-            <li v-for="car in cars" :key="car.id" class="border-b py-2">
-                {{ car.make }} {{ car.model }} ({{ car.year }}) - {{ car.miles }} miles
-            </li>
-        </ul>
+        <table class="bg-white p-4 shadow-md rounded-lg w-full border-collapse">
+    <thead>
+        <tr class="border-b">
+            <th class="py-2 px-4 text-left">Make</th>
+            <th class="py-2 px-4 text-left">Model</th>
+            <th class="py-2 px-4 text-left">Year</th>
+            <th class="py-2 px-4 text-left">Miles</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr v-for="car in cars" :key="car.id" class="border-b">
+            <td class="py-2 px-4">{{ car.make }}</td>
+            <td class="py-2 px-4">{{ car.model }}</td>
+            <td class="py-2 px-4">{{ car.year }}</td>
+            <td class="py-2 px-4">{{ car.miles }} miles</td>
+        </tr>
+    </tbody>
+</table>
+
     </div>
 </template>
 
